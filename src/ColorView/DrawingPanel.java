@@ -1,6 +1,7 @@
 package ColorView;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -37,10 +38,31 @@ private void setupPanel()
 	this.add(addRectangleButton);
 }
 
-private void setupLayout()
+	private void setupLayout()
 
-private void setupListeners()
-{
+	private void setupListeners()
+	{
 	
-}
+	}
+
+	@Override
+	protected void paintComponent(Graphics currentGraphics)
+	{
+		super.paintComponent(currentGraphics);
+		
+		Graphics2D mainGraphics = (Graphics2D) currentGraphics;
+		mainGraphics.setStroke(new BasicStroke(20));
+		mainGraphics.setColor(Color.ORANGE);
+		mainGraphics.drawRect(50, 70, 200, 400);
+		
+		for(Rectangle current : rectangleList)
+		{
+			int red = (int)(Math.random() * 256);
+			int green = (int)(Math.random() * 256);
+			int blue = (int)(Math.random() * 256);
+			
+			mainGraphics.setColor(new Color(red, green, blue));
+			mainGraphics.fill(current);
+	}
+
 }
