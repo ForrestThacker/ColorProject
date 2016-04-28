@@ -24,24 +24,7 @@ public class ShapePanel extends JPanel
 		squareList = new ArrayList<Rectangle>();
 		circleList  new ArrayList<Ellipse2D>();
 		ellipseList = new ArrayList<Ellipse2D>();
-	}
-	
-}
-
-setupPanel();
-{
-	
-}
-
-setupListeners();
-{
-	
-}
-
-setupLayout();
-{
-	
-}
+	}	
 
 
 public void AddRectangle()
@@ -99,6 +82,13 @@ protected void paintComponent(Graphics currentGraphics)
 	{
 		int red = (int)(Math.random() * 256);
 		int green = (int)(Math.random() * 256);
+		int blue = (int)(Math.random() * 256);
+		
+		int penSize = (int)(Math.random() * 10) + 3;
+		mainGraphics.setColor(new Color(red, green, blue));
+		mainGraphics.setStroke( new BasicStroke(penSize));
+		
+		mainGraphics.draw(currentTriangle);
 	}
 }
 

@@ -35,10 +35,24 @@ private void setupPanel()
 {
 	this.setLayout(baseLayout);
 	this.setBackground(Color.DARK_GRAY);
-	this.add(addRectangleButton);
+	this.add(addRectangleButton);//add all the buttons
+	this.add(addPolygonButton);
+	this.add(shapePanel);
+	this.add(clearButton);
 }
 
 	private void setupLayout()
+	{
+		baseLayout.putConstraint(SpringLayout.WEST, addRectangleButton, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, addRectangleButton, -40, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, addPolygonButton, 10, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, addPolygonButton, -30, SpringLayout.NORTH, this);
+		
+		baseLayout.putConstraint(SpringLayout.NORTH, shapePanel, 50, SpringLayout.NORTH,this);
+		baseLayout.putConstraint(SpringLayout.WEST, shapePanel, 50, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, shapePanel, 350, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, shapePanel, -50, SpringLayout.EAST, this);
+	}
 
 	private void setupListeners()
 	{
