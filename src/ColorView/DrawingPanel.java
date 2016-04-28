@@ -1,5 +1,46 @@
 package ColorView;
 
-public class DrawingPanel {
+import java.awt.Color;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.SpringLayout;
+
+import com.sun.javafx.geom.Rectangle;
+
+public class DrawingPanel extends JPanel
+{
+	private ArrayList<Rectangle> RectangleList;
+	private ArrayList<Rectangle> squareList;
+	private DrawingController baseController;
+	private ShapePanel shapePanel;
+	private JButton addRectangleButton;
+	private SpringLayout baseLayout;
+}
+
+public DrawingPanel(DrawingController baseController)
+{
+	this.baseController = baseController;
+	baseLayout = new SpringLayout();
+	addRectangleButton = new JButton("Add a Rectangle");
+	
+	setupPanel();
+	setupLayout();
+	setupListeners();
+}
+
+private void setupPanel()
+{
+	this.setLayout(baseLayout);
+	this.setBackground(Color.DARK_GRAY);
+	this.add(addRectangleButton);
+}
+
+private void setupLayout()
+
+private void setupListeners()
+{
+	
+}
 }

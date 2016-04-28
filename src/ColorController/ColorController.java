@@ -1,5 +1,8 @@
 package ColorController;
+import ctec.view.*;
 
-public class ColorController {
+public class ColorController 
 
+{
+	
 }
