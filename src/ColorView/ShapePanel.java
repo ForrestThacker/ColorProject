@@ -82,20 +82,34 @@ public void addPolygon()
 protected void paintComponent(Graphics currentGraphics)
 {
 	super.paintComponent(currentGraphics);
+	this.setBackground(Color.GREEN);
+	this.setOpaque(true);
 	Graphics2D mainGraphics = (Graphics2D) currentGraphics;
 	//Loops to do lists.
 	
 	for(Polygon currentTriangle : triangleList)
 	{
+		int randomStroke = (int)(Math.random() * 7);
 		int red = (int)(Math.random() * 256);
 		int green = (int)(Math.random() * 256);
 		int blue = (int)(Math.random() * 256);
-		
 		int penSize = (int)(Math.random() * 10) + 3;
 		mainGraphics.setColor(new Color(red, green, blue));
 		mainGraphics.setStroke( new BasicStroke(penSize));
 		
 		mainGraphics.draw(currentTriangle);
+	}
+	for(Ellipse2D circle : circleList)
+	{
+		int randomStroke = (int)(Math.random() * 7);
+		int red = (int)(Math.random() * 256);
+		int green = (int)(Math.random() * 256);
+		int blue = (int)(Math.random() * 256);
+		int penSize = (int)(Math.random() * 10) + 3;
+		mainGraphics.setColor(new Color(red, green, blue));
+		mainGraphics.setStroke( new BasicStroke(penSize));
+		
+		mainGraphics.draw(circle);
 	}
 }
 
