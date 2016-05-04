@@ -1,6 +1,7 @@
 package ColorView;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
@@ -9,13 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
 import com.sun.javafx.geom.Rectangle;
+import com.sun.prism.BasicStroke;
+import com.sun.p
+rism.Graphics;
 
 public class DrawingPanel extends JPanel
 {
 	private ArrayList<Rectangle> RectangleList;
 	private ArrayList<Rectangle> squareList;
 	private DrawingController baseController;
-	private ShapePanel shapePanel;
+	private Component shapePanel;
 	private JButton addRectangleButton;
 	private SpringLayout baseLayout;
 }
